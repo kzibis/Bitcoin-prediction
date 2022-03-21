@@ -52,6 +52,7 @@ protobuf==3.19.4
 pure-eval==0.2.2
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
+pyenv-win==2.64.11
 Pygments==2.11.2
 pyparsing==3.0.7
 python-dateutil==2.8.2

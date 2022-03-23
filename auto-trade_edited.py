@@ -1,9 +1,11 @@
 from model_edited import create_model
 import pandas as pd
 import numpy as np
-from coincheck import market,order,account
+#from coincheck import market,order,account
 import openpyxl
 import time
+import ccxt
+from pprint import pprint
 
 #モデルの読み込み
 model = create_model()
@@ -27,11 +29,17 @@ prediction = model.predict(input_data).flatten()
 print("AIが予測するBTC価格は以下です。")
 print(prediction)
 
-#直近のBTC価格をコインチェックから取得
-m1=market.Market()
-price_now = m1.ticker()["last"]
+#直近のBTC価格をコインチェックから取得(coincheck ver)
+#m1=market.Market()
+#price_now = m1.ticker()["last"]
+
+#直近のBTC価格をコインチェックから取得(ccxt ver)
+base = ccxt.coincheck()
+ticker = base.fetch_ticker(symbol ='BTC/JPY')
 print("コインチェックでのBTC取引価格は以下です。")
-print(price_now)
+price_now = ticker["last"]
+#print(price_now)
+pprint("["+str(price_now)+"]")
 
 #エクセルのファイルを読み込み
 book = openpyxl.load_workbook(r'C:\Users\kazum\Desktop\edited_version\auto-trade_prediction-record.xlsx')

@@ -1,7 +1,9 @@
-tensorflow
+tensorflow-cpu
 requests
 pandas
 numpy
 matplotlib
 openpyxl
+time
 ccxt
+pprint

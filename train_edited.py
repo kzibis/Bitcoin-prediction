@@ -4,7 +4,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.optimizers import Adam
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 
 #モデルの作成
 model = create_model()
@@ -58,10 +58,10 @@ model.save_weights('param.hdf5')
 
 #学習中の評価値の推移
 #右肩下がりのグラフになっていると嬉しい
-plt.plot(history.history['mae'], label='train mae')
-plt.plot(history.history['val_mae'], label='val mae')
-plt.xlabel('epoch')
-plt.ylabel('mae')
-plt.legend(loc='best')
-plt.ylim([0,1000000])
-plt.savefig("train-result.png")
+#plt.plot(history.history['mae'], label='train mae')
+#plt.plot(history.history['val_mae'], label='val mae')
+#plt.xlabel('epoch')
+#plt.ylabel('mae')
+#plt.legend(loc='best')
+#plt.ylim([0,1000000])
+#plt.savefig("train-result.png")

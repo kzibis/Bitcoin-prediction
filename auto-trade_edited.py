@@ -6,6 +6,29 @@ import openpyxl
 import time
 import ccxt
 from pprint import pprint
+import requests
+
+#データを取得
+btc_url = "https://api.cryptowat.ch/markets/bitflyer/btcjpy/ohlc"
+
+hour = "?periods=3600&after=1631718000"
+day = "?periods=86400&after=1617202800"
+
+df_columns = [
+    "CloseTime",
+    "OpenPrice",
+    "HighPrice",
+    "LowPrice",
+    "ClosePrice",
+    "Volume",
+    "QuoteVolume"
+]
+
+res = requests.get(btc_url+hour).json()
+df = pd.DataFrame(res['result']['3600'], columns=df_columns)
+df.to_csv('./btnjpy_hour.csv')
+
+
 
 #モデルの読み込み
 model = create_model()

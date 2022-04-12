@@ -65,7 +65,7 @@ price_now = ticker["last"]
 pprint("["+str(price_now)+"]")
 
 #エクセルのファイルを読み込み
-book = openpyxl.load_workbook(r'C:\Users\kazum\Desktop\edited_version\auto-trade_prediction-record.xlsx')
+book = openpyxl.load_workbook(r'C:\Users\kazum\Desktop\edited_version\'auto-trade_prediction-record.xlsx')
 sheet = book['Sheet1']
 #データを書き込むために最終行を取得
 max = sheet.max_row

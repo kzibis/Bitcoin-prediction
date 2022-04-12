@@ -50,7 +50,7 @@ print(train_y)
 #リターンの時系列などにする、といった工夫もなし
 
 # 学習の実行
-history = model.fit(train_x, train_y, epochs=2000, validation_split=0.2)
+history = model.fit(train_x, train_y, epochs=1000, validation_split=0.2)
 
 #学習結果をファイルに保存
 #成功するとディレクトリ内にparam.hdf5というファイルが生成される
